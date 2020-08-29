@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Fish Creek Animal Clinic Services</title>
+    <link href="./fishcreek.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script> 
+        function validateForm() {
+            if (document.forms[0].myEmail.value == "") {
+                alert("Please Enter an email-address.");
+                return false;
+            } // end if
+            return true;
+        } // end function
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body >
+    <div >
+        <div id="wrapper">
+            <header>
+                <h1>Fish Creek Animal Clinic</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./services.html">Services</a></li>
+                    <li><a href="./askvet.html">Ask The Vet</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <main>
+                <h2>Contact Fish Creek</h2>
+                <p>Required information is marked with an asterisk(*)</p>
+                <form method="post" action="htt://webdevbasics.net/scripts/fishcreek.php"
+                onsubmit="return validateForm()">
+                    <label for="myName">Name</label>
+                    <input type="text" name="myName" id="myName" />
+                    <label for="myEmail">*Email</label>
+                    <input type="email" name="myEmail" id="myEmail" required="required" />
+                    <label for="myComments">Comments</label>
+                    <textarea name="myComments" cols="20" rows="2"></textarea>
+                    <input type="submit" id="mySubmit" value="Send Now" />
+                </form>
+            </main>
+             <footer>
+                <p>
+                    Copyright &copy; 2019 Fish Creek Animal Clinic<br />
+                    <a href="mailto:gmail.com">cameron99@aol.com</a>
+                </p>
+            </footer>
+        </div>
+        
+    </div>
+</body>
+</html>
+</html>

@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Java Jam Coffee House</title>
+    <link href="./javajam.css" rel="stylesheet" />
+
+</head>
+<body >
+    <div id="wrapper">
+        <header>
+            <h1> Java Jam Coffee House</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./music.html">Music</a></li>
+                <li><a href="./jobs.html">Jobs</a></li>
+            </ul>
+
+        </nav>
+        <main >
+            <div id="herojobs"></div>
+            <h2> Jobs at Java Jam</h2>
+            <p>
+                Want to work at Java Jam?  Fill out the form below to begin your application.<br />
+                Required fields are marked with an asterisk(*).
+            </p>
+            <form method="post" action="http://webdevbasics.net/scripts/javajam8.php">
+                <label for="myName">*Name</label>
+                <input type="text" name="myNameName" id="myNameID" required="required"/>
+                <label for="myEmail">*Email</label>
+                <input type="email" name="myEmail" id="myEmail" required="required"/>
+                <label for="myExpereince">*Experience</label>
+                <textarea name="myExperience" rows="2" cols="20" required="required"></textarea>
+                <input type="Submit" value="Apply Now" id="mySubmit" />
+            </form>
+            
+        </main>
+        <footer>
+            <p>
+                Copyright &copy; 2019 Java Jam Coffee House<br />
+                <a href="mailto:camboelter99@aol.com">camboelter99@aol.comm</a>
+            </p>
+        </footer>
+    </div>
+    
+</body>
+</html>
