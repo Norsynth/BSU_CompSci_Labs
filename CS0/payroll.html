@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+      <meta charset="utf-8">
+      <title> Payroll Calculations</title>
+
+      <script type="text/javascript">
+<!-- Do not change this. -->
+      function roundMoney(amount)
+      // Assumes amount is a number.
+      // -----------------------------------------------------------------------
+      // Returns the number that is amount rounded to 2 decimal places.
+      // Notice that this code is almost identical to a couple of lines
+      // in calculateTip.html. 
+      {
+         pennies = Math.round(amount * 100);
+         return pennies / 100;
+      }
+      
+<!-- Your changes go below here. -->
+      function calculate()
+      // Assumes a gross salary appears in the grossPayBox.
+      // Assumes a federal tax rate appears in the fedTaxRateBox.
+      // Assumes a state tax rate appears in the stateTaxRateBox.
+      // -----------------------------------------------------------------------
+      // Calculates the federal tax and state tax on the gross salary and
+      // then calculates the net pay.  It then
+      // displays those values in the outputDiv.
+      {
+        
+        
+        
+        var grossPay=parseFloat(document.getElementById("grossPayBox").value);
+        
+        
+        var FederalTax=
+			parseFloat(document.getElementById("grossPayBox").value)*(document.getElementById('fedTaxRateBox').value/100) ;
+        
+        var StateTax=
+			parseFloat(document.getElementById("grossPayBox").value)*(document.getElementById('stateTaxRateBox').value/100)
+        
+        var NetPay=grossPay-FederalTax-StateTax;
+			
+     
+        var Output='The gross pay is: $' + roundMoney(grossPay) + '<br>The federal tax is: $' + roundMoney(FederalTax) + '<br>The state tax is: $' + roundMoney(StateTax) + '<br>The net pay is: $' + roundMoney(NetPay);
+        
+        
+       
+
+        
+			document.getElementById('outputDiv').innerHTML=Output;
+			
+			//document.getElementById('outputDiv').innerHTML=;
+        
+        
+        
+      } 
+
+
+
+<!-- Do not change anything below here. -->
+      
+      </script>
+
+   </head>
+
+   <body>
+
+   <h1>Payroll Calculator</h1>
+
+<p>Please enter the following information.</p>
+
+            <p> Gross Salary:
+               $<input type="text" id="grossPayBox" size="10" value="1267.58" maxlength="10">
+	<br>
+               Federal Tax Rate: <input type="text" id="fedTaxRateBox" size="2" value="12" style="text-align:right;">%
+	<br>
+               State Tax Rate: <input type="text" id="stateTaxRateBox" size="2" value="5" style="text-align:right;">%
+	    </p>
+      <p>
+         <input type="button" value=" Calculate Taxes and Net Pay " onclick="calculate();">
+      </p>
+      
+      
+      <div id="outputDiv"></div>
+      
+   
+
+
+</body></html>

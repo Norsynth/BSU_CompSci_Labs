@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+   grades.html
+   
+   Copyright 2019 Cameron Boelter <sf2380pt@HS104L02>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<head>
+<meta charset="utf-8" />
+<title>Grades</title>
+<meta name="generator" content="Geany 1.32" />
+</head>
+
+<body>
+	
+<h1>Grade Checker</h1>
+<hr></hr>
+	<p>This Program will allow you to check your final grade. Simply enter your grade percentage in each corresponding box.</p>
+
+	<hr>
+		
+	<table style="border:none">
+		<tr> <th style="text-align:left"> Grade </th> <th
+style="border:none"> Percentage </th> </tr>
+         <tr> <td style="border:none"> Homework: </td> <td
+style="text-align:right"> 25% </td> </tr>
+	<tr> <td style="border:none">Labs:</td> <td
+style="text-align:right"> 20% </td> </tr>
+         <tr> <td style="border:none"> Midterm Exam:</td> <td
+style="text-align:right"> 25% </td> </tr>
+         <tr> <td style="border:none"> Final Exam:</td> <td
+style="text-align:right"> 30% </td> </tr>
+</table>
+
+	
+
+
+<p>
+
+	Enter the Homework% <input type="text" id="HW" size=6 value="90">, 
+	Enter the Lab% <input type="text" id="Lab" size=6 value="80">, 
+	Enter the Midterm% <input type="text" id="Mid" size=6 value="70">, 
+	Enter the Final% <input type="text" id="Final" size=6 value="60">, 
+	
+</p>
+
+
+	 <input type="button" value="Calculate Grade" 
+          onclick="average=
+          parseFloat(document.getElementById('HW').value)*.25+
+          parseFloat(document.getElementById('Lab').value)*.2+
+          parseFloat(document.getElementById('Mid').value)*.25+
+          parseFloat(document.getElementById('Final').value)*.3;
+          document.getElementById('output').innerHTML=average;"
+          >
+	
+	<div id="output"></div>
+	
+	
+	
+	
+</body>
+
+
+	  
+</html>

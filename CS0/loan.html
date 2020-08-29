@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+   loan.html
+   
+   Copyright 2019 Cameron Boelter <sf2380pt@HS104L02>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<head>
+<meta charset="utf-8" />
+<title>Monthly Payments</title>
+<meta name="generator" content="Geany 1.32" />
+
+      <script type="text/javascript">
+
+         function Payment( P, R, N)
+         
+			{
+				
+			
+				
+				R = R/1200 ;
+				
+				var topHalf ;
+				topHalf= Math.pow(1 + R,N) * P * R;
+				
+				
+				var bottomHalf ;
+				bottomHalf= Math.pow(1 + R,N) - 1;
+				
+				return topHalf/bottomHalf ;
+				
+				
+				
+				
+				
+			}
+			
+             function CalculatePayment()
+         {
+			 
+            var prin = document.getElementById('prinBox').value;
+            prin = parseFloat(prin);
+            var apr = document.getElementById('aprBox').value;
+            apr = parseFloat(apr);
+            var months = document.getElementById('monthsBox').value;
+            months = parseInt(months);
+            
+      
+          
+	       var moPayment = Payment(prin, apr, months);
+               moPayment = moPayment.toFixed(2);
+               var interest = months * moPayment - prin;
+               interest = interest.toFixed(2);
+               document.getElementById('outputDiv').innerHTML = 
+	       '<p>A loan of $' + prin + ' with an interest rate of ' +
+	        apr +'% will require a monthly payment of $' + moPayment
+		+ ' in order to pay the loan off in ' + months + 
+		' months. Over the lifetime of the loan a total of $' +
+		interest + ' will be paid in interest.</p>' ;
+	  
+         }
+<!--  DO NOT CHANGE ANYTHING BELOW THIS POINT!  -->
+
+      </script>
+
+
+
+</head>
+
+<body>
+ <p>
+          Loan Principal: $
+          <input type="text" id="prinBox" size="10" value="1000" />
+          <br />
+       </p>
+       <p>
+          APR: 
+          <input type="text" id="aprBox" size="4" value="5.1" />%
+          <br />
+       </p>
+       <p>
+          Months: 
+          <input type="text" id="monthsBox" size="4" value="12" />
+          <br />
+       </p>
+       <hr />
+       <p>
+          <input type="button" 
+                 value="Calculate Payment" 
+                 onclick="CalculatePayment();" />
+        <div id="outputDiv"></div>
+</body>
+
+</html>

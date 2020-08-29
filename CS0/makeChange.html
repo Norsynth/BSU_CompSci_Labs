@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+   makeChange.html
+   
+   Copyright 2019 Cameron Boelter <sf2380pt@HS104L02>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<head>
+<meta charset="utf-8" />
+<title>MakeChange</title>
+<meta name="generator" content="Geany 1.32" />
+
+ <script type="text/javascript">
+	function FindChange()
+
+	{
+		var pennies=parseFloat(document.getElementById("change").value);
+		
+			
+		var quarters=Math.floor(change/25) 
+			document.getElementById('outputDiv').innerHTML='quarters= ' + Math.floor(pennies/25) ;
+			pennies= pennies%25 ;
+			
+		var dimes=Math.floor(change/10) 
+			document.getElementById('outputDiv2').innerHTML='dimes= ' + Math.floor(pennies/10) ;
+			pennies= pennies%10 ;
+			
+		var quarters=Math.floor(change/5) 
+			document.getElementById('outputDiv3').innerHTML='nickels= ' + Math.floor(pennies/5) ;
+			pennies= pennies%5 ;
+			
+				document.getElementById('outputDiv4').innerHTML='pennies= ' + pennies;
+			
+			
+	
+	}
+
+
+</script>
+
+</head>
+
+<body>
+
+	<h1>Change Finder</h1>
+	
+<p>This website will find the least amount of coins needed for your change.</p>
+<p>Using the following coins:</p>
+
+
+Quarter: $0.25 <br>
+Dime: $0.10 <br>
+Nickel: $0.05 <br>
+Penny: $0.01 <br>
+
+
+<hr>
+
+Enter the amount of change (cents): <input type="text" id="change" size=6 value="57">
+
+
+
+		<input type="button" value="Calculate Change" onclick="FindChange();">
+		
+
+
+		<div id="outputDiv"></div>
+		<div id="outputDiv2"></div>
+		<div id="outputDiv3"></div>
+		<div id="outputDiv4"></div>
+
+
+</body>
+
+</html>
